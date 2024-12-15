@@ -3,7 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const csv = require('csv-parser');
-
+const port = process.env.PORT || 3000; 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -67,7 +67,7 @@ app.get('/dishes/suggest', (req, res) => {
 });
 
 // Start the server
-const port = 3000;
+
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
